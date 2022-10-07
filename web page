@@ -1,0 +1,14 @@
+map <- mimapa %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(popup=paste
+             ("<br>Country: ", 
+               htmlEscape(mimapa$Country), 
+              "<br>City: ", 
+               htmlEscape(mimapa$City), 
+              "<br>Restaurant: ", 
+               htmlEscape(mimapa$Name),
+              "<br>Ranking: ",
+               formatC(datamap$Ranking, format = "d", big.mark = ",")
+              ) 
+            )
